@@ -10,7 +10,12 @@ To add the automation:
    ![Disable polling for updates](/images/screenshots/custom_polling_01.png)
 3. To define your custom polling interval, create an automation.
    - Go to {% my automations title="**Settings** > **Automations & Scenes**" %} and create a new automation.
-   - Define any trigger and condition you like.
+   - Define the trigger and conditions. To trigger every 5 minutes, use
+      ```
+      platform: time_pattern
+      minutes: /5
+      ```
    - Under action, select **Call service** and use the [`homeassistant.update_entity` service](/integrations/homeassistant/#service-homeassistantupdate_entity).
    ![Update entity](/images/screenshots/custom_polling_02.png)
+   - Target: Select your binary sensor.
 4. Save your new automation to poll for data.
